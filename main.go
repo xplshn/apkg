@@ -1,9 +1,9 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/xplshn/apkg/cmds/build"
 	"github.com/xplshn/apkg/cmds/get"
@@ -16,22 +16,36 @@ import (
 
 func main() {
 	log.SetFlags(0)
-	switch os.Args[1] {
-	case "build":
+
+	// Define command flags
+	buildFlag := flag.Bool("build", false, "Build the package")
+	verifyFlag := flag.Bool("verify", false, "Verify the package")
+	installFlag := flag.Bool("install", false, "Install the package")
+	getFlag := flag.Bool("get", false, "Get the package")
+	removeFlag := flag.Bool("remove", false, "Remove the package")
+	listFlag := flag.Bool("list", false, "List the packages")
+	infoFlag := flag.Bool("info", false, "Show package information")
+
+	// Parse flags
+	flag.Parse()
+
+	// Handle the commands based on the flags
+	switch {
+	case *buildFlag:
 		build.Run()
-	case "verify":
+	case *verifyFlag:
 		verify.Run()
-	case "install":
+	case *installFlag:
 		install.Run()
-	case "get":
+	case *getFlag:
 		get.Run()
-	case "remove":
+	case *removeFlag:
 		remove.Run()
-	case "list":
+	case *listFlag:
 		list.Run()
-	case "info":
+	case *infoFlag:
 		info.Run()
 	default:
-		fmt.Println("not a command")
+		fmt.Println("Please specify a valid command. Use --build, --verify, --install, --get, --remove, --list, or --info.")
 	}
 }
