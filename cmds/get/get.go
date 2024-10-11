@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/kelseyhightower/pm/cmd"
-	"github.com/kelseyhightower/pm/openpgp"
+	"github.com/xplshn/apkg/cmds"
+	"github.com/xplshn/apkg/openpgp"
 )
 
 func Run() {

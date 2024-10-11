@@ -15,8 +15,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"code.google.com/p/go.crypto/openpgp"
-	"github.com/kelseyhightower/pm/metadata"
+	"golang.org/x/crypto/openpgp"
+	"github.com/xplshn/apkg/metadata"
 )
 
 var (

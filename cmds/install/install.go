@@ -13,9 +13,9 @@ import (
 	"path"
 	"strings"
 
-	"github.com/kelseyhightower/pm/cmd"
-	"github.com/kelseyhightower/pm/metadata"
-	"github.com/kelseyhightower/pm/openpgp"
+	"github.com/xplshn/apkg/cmds"
+	"github.com/xplshn/apkg/metadata"
+	"github.com/xplshn/apkg/openpgp"
 )
 
 func Run() {
